@@ -626,3 +626,10 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
+@media (max-width:768px){
+
+  .page-header h1{
+    font-size:35px;
+  }
+}
