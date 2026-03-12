@@ -629,7 +629,8 @@
 
 @media (max-width:768px){
 
-  .page-header h1{
-    font-size:30px;
-  }
+ .page-header h1{
+  font-size: 30px !important;
+  font-weight: 600px;
+ }
 }
