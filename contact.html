@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Maa Vaishnavi Construction</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- Color Variables (ADDED FIX) --- */
+        :root {
+            --primary-navy: #0F2942;
+            --accent-gold: #F39C12;
+            --accent-gold-hover: #D68910;
+            --light-bg: #F8F9FA;
+            --text-main: #4A4A4A;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- Buttons --- */
+        .btn-theme {
+            background-color: var(--accent-gold);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-theme:hover {
+            background-color: var(--accent-gold-hover);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+        }
+
+        /* --- Page Header / Breadcrumb Section --- */
+        .page-header {
+            background: linear-gradient(rgba(15, 41, 66, 0.85), rgba(15, 41, 66, 0.9)), url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+        .page-header h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .breadcrumb {
+            background: transparent;
+            justify-content: center;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .breadcrumb-item a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb-item a:hover {
+            color: #fff;
+        }
+        .breadcrumb-item.active {
+            color: #fff;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+        
+        /* --- Mission / Vision Cards --- */
+        .mv-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-gold);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .mv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(15, 41, 66, 0.1);
+        }
+        .mv-icon {
+            font-size: 3rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+
+        /* --- Contact Info Box --- */
+        .contact-info-box {
+            background: var(--primary-navy);
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            height: 100%;
+            border-right: 5px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(15, 41, 66, 0.15);
+        }
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .contact-detail:hover .contact-icon {
+            background: var(--accent-gold);
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .contact-text h5 {
+            margin-bottom: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .contact-text p, .contact-text a {
+            color: #e0e0e0;
+            margin: 0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        .contact-text a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Contact Form --- */
+        .contact-form-wrapper {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-gold);
+            height: 100%;
+        }
+        .form-control, .form-select {
+            border-radius: 5px;
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            background-color: var(--light-bg);
+        }
+        .form-control:focus, .form-select:focus {
+            box-shadow: 0 0 0 0.25rem rgba(243, 156, 18, 0.25);
+            border-color: var(--accent-gold);
+            background-color: #fff;
+        }
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-navy);
+            font-size: 0.9rem;
+        }
+
+        /* --- Large Map --- */
+        .map-container-large {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 450px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+
+        /* --- Footer Styles (ADDED FOR COMPLETENESS) --- */
+        .footer-area {
+            background-color: var(--primary-navy);
+            color: #e0e0e0;
+            padding: 70px 0 20px;
+        }
+        .footer-heading {
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        .footer-links a i { color: var(--accent-gold); margin-right: 8px; }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .footer-social a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+        .footer-bottom a { color: var(--accent-gold); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand text-uppercase" href="index.html" style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--primary-navy);">
+                Maa <span style="color: var(--accent-gold);">Vaishnavi</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: var(--primary-navy);">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html" style="color: var(--primary-navy);">About Us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="color: var(--primary-navy);">Projects</a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="realstate.html">Real Estate</a></li>
+                            <li><a class="dropdown-item" href="construction.html">Construction</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html" style="color: var(--primary-navy);">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html" style="color: var(--accent-gold);">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block">
+                <a href="#quote" class="btn btn-theme">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <main>
+        <section class="py-5 bg-white">
+            <div class="container py-4">
+                <div class="row g-4 mb-5">
+                    
+                    <div class="col-lg-4">
+                        <div class="contact-info-box">
+                            <h3 class="fw-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Get In Touch</h3>
+                            <p class="mb-4 text-light" style="font-size: 0.95rem;">Have questions about our industrial lands or construction services? Our team is ready to help you build the future.</p>
+                            
+                            <div class="contact-detail">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-text">
+                                    <h5>Head Office</h5>
+                                    <p>123 Business Tower, Civil Lines,<br>Prayagraj, Uttar Pradesh 211001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="contact-text">
+                                    <h5>Phone Number</h5>
+                                    <a href="tel:+919876543210">+91 98765 43210</a><br>
+                                    <a href="tel:+919876543211">+91 98765 43211</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-text">
+                                    <h5>Email Address</h5>
+                                    <a href="mailto:info@maavaishnaviconstruction.in">info@maavaishnaviconstruction.in</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail mb-0">
+                                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                                <div class="contact-text">
+                                    <h5>Working Hours</h5>
+                                    <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="contact-form-wrapper">
+                            <div class="mb-4">
+                                <h3 class="fw-bold" style="color: var(--primary-navy);">Send Us a Message</h3>
+                                <div style="width: 50px; height: 3px; background-color: var(--accent-gold); margin: 10px 0 20px;"></div>
+                            </div>
+                            
+                            <form id="whatsappForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" id="fullName" placeholder="John Doe" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="emailAddress" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phoneNumber" class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control" id="phoneNumber" placeholder="+91 98765 43210" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="interest" class="form-label">Interested In</label>
+                                        <select class="form-select" id="interest">
+                                            <option selected disabled>Select an option...</option>
+                                            <option value="Industrial Lands">Industrial Lands</option>
+                                            <option value="CA Lands">CA Lands</option>
+                                            <option value="Fresh Lands">Fresh Lands</option>
+                                            <option value="Residential Property">Residential Property</option>
+                                            <option value="Construction Services">Construction Services</option>
+                                            <option value="Other">Other Inquiry</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Your Message *</label>
+                                        <textarea class="form-control" id="message" rows="5" placeholder="How can we help you today?" required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-theme px-5 py-3 w-100 fw-bold d-flex align-items-center justify-content-center">
+                                            <i class="fab fa-whatsapp me-2"></i> Send to WhatsApp
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5 bg-white">
+            <div class="container">
+                <div class="map-container-large">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.822839446401!2d81.83151741501438!3d25.44415848378177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2sCivil%20Lines%2C%20Prayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1683100000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" style="background-color: var(--light-bg);">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="mv-card">
+                            <i class="fas fa-bullseye mv-icon"></i>
+                            <h3 class="fw-bold mb-3">Our Mission</h3>
+                            <p class="text-muted mb-0">
+                                To bridge the gap between heavy industries and premium land resources by providing seamless, transparent, and legally sound land aggregation services. We strive to empower corporate growth while ensuring fair compensation and ethical dealings with local farmers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mv-card">
+                            <i class="fas fa-eye mv-icon"></i>
+                            <h3 class="fw-bold mb-3">Our Vision</h3>
+                            <p class="text-muted mb-0">
+                                To be the most trusted and leading land aggregation and construction partner in India. We envision a future where infrastructural development and environmental responsibility coexist, driven by our expert management of Vivid Purpose and CA lands.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 9999; background-color: var(--accent-gold);"></button>
+                <div class="modal-body p-0 text-center">
+                    <img src="" id="lightboxImage" alt="Enlarged Gallery Image" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-heading" style="font-size: 1.5rem; border: none;">
+                        Maa <span style="color: var(--accent-gold);">Vaishnavi</span>
+                    </h3>
+                    <p class="mt-4 pe-lg-4">
+                        We provide premium industrial land parcels to corporates for setting up new projects across India. Secure prime land for long-term growth with a name you can trust.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading text-uppercase fs-6">Quick Links</h4>
+                    <ul class="footer-links mt-4">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-us.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="realstate.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading text-uppercase fs-6">Top Pages</h4>
+                    <ul class="footer-links mt-4">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy & Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Field Workers</a></li>
+                        <li><a href="realstate.html"><i class="fas fa-chevron-right"></i> Real Estate</a></li>
+                        <li><a href="construction.html"><i class="fas fa-chevron-right"></i> Construction</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading text-uppercase fs-6">Contact Info</h4>
+                    <ul class="footer-links mt-4">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Civil Lines, Prayagraj, UP</a></li>
+                        <li><a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a></li>
+                        <li><a href="mailto:info@maavaishnaviconstruction.in"><i class="fas fa-envelope"></i> info@maavaishnaviconstruction.in</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p>© 2026 <strong>Maa Vaishnavi Construction</strong>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">
+                            <a href="#">Privacy & Policy</a> | 
+                            <a href="#">Terms & Conditions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Send Form Data to WhatsApp
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents page reload
+
+            // 1. Enter your WhatsApp Number here (With country code, no +)
+            var myPhoneNumber = "919876543210"; 
+
+            // 2. Fetch User Data
+            var name = document.getElementById('fullName').value;
+            var email = document.getElementById('emailAddress').value;
+            var phone = document.getElementById('phoneNumber').value;
+            var interest = document.getElementById('interest').value;
+            var userMessage = document.getElementById('message').value;
+
+            // Handle dropdown validation
+            if (interest === "Select an option...") {
+                interest = "Not Specified";
+            }
+
+            // 3. Create Message (FIXED: Updated to Maa Vaishnavi Construction)
+            var message = "Hello Maa Vaishnavi Construction, I have a new inquiry from the website:" + "\n\n" +
+                          "*Name:* " + name + "\n" +
+                          "*Phone:* " + phone + "\n" +
+                          "*Email:* " + email + "\n" +
+                          "*Interested In:* " + interest + "\n\n" +
+                          "*Message:* " + "\n" + userMessage;
+
+            // 4. Encode URL & Open WhatsApp
+            var url = "https://wa.me/" + myPhoneNumber + "?text=" + encodeURIComponent(message);
+            
+            window.open(url, '_blank').focus();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

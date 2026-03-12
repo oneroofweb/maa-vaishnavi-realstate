@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realstate Projects | Maa Viashnavi Construction</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* --- Buttons --- */
+        .btn-theme {
+            background-color: var(--accent-gold);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-theme:hover {
+            background-color: var(--accent-gold-hover);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+        }
+
+        /* --- Page Header / Breadcrumb Section --- */
+        .page-header {
+            background: linear-gradient(rgba(15, 41, 66, 0.85), rgba(15, 41, 66, 0.9)), url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+        .page-header h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .breadcrumb {
+            background: transparent;
+            justify-content: center;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .breadcrumb-item a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb-item a:hover {
+            color: #fff;
+        }
+        .breadcrumb-item.active {
+            color: #fff;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+            content: "\f105"; /* FontAwesome chevron right */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+        
+        /* --- Mission / Vision Cards --- */
+        .mv-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-gold);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .mv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(15, 41, 66, 0.1);
+        }
+        .mv-icon {
+            font-size: 3rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand text-uppercase" href="#"
+          >Maa <span>Vaishnavi</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href=""
+                data-bs-toggle="dropdown"
+                >Projects</a
+              >
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="realstate.html">Realstate</a></li>
+                <li><a class="dropdown-item" href="/construction.html">Construction</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/construction.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-none d-lg-block">
+          <a href="#quote" class="btn btn-theme">Get a Quote</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Gallery</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ==================== Project Gallery ===================== -->
+    <section class="py-5 bg-white" id="gallery">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h2>Project Gallery</h2>
+          <div
+            style="
+              width: 60px;
+              height: 3px;
+              background-color: var(--accent-gold);
+              margin: 15px auto;
+            "
+          ></div>
+          <p class="text-muted">
+            A glimpse into our prime locations and completed projects
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#lightboxModal"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                alt="Gallery Image 1"
+                class="img-fluid"
+              />
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#lightboxModal"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                alt="Gallery Image 2"
+                class="img-fluid"
+              />
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#lightboxModal"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                alt="Gallery Image 3"
+                class="img-fluid"
+              />
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#lightboxModal"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                alt="Gallery Image 4"
+                class="img-fluid"
+              />
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#lightboxModal"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                alt="Gallery Image 5"
+                class="img-fluid"
+              />
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#lightboxModal"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                alt="Gallery Image 6"
+                class="img-fluid"
+              />
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+    <section class="py-5" style="background-color: var(--light-bg);">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="mv-card">
+                        <i class="fas fa-bullseye mv-icon"></i>
+                        <h3 class="fw-bold mb-3">Our Mission</h3>
+                        <p class="text-muted mb-0">
+                            To bridge the gap between heavy industries and premium land resources by providing seamless, transparent, and legally sound land aggregation services. We strive to empower corporate growth while ensuring fair compensation and ethical dealings with local farmers.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="mv-card">
+                        <i class="fas fa-eye mv-icon"></i>
+                        <h3 class="fw-bold mb-3">Our Vision</h3>
+                        <p class="text-muted mb-0">
+                            To be the most trusted and leading land aggregation and construction partner in India. We envision a future where infrastructural development and environmental responsibility coexist, driven by our expert management of Vivid Purpose and CA lands.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body p-0 text-center">
+            <img src="" id="lightboxImage" alt="Enlarged Gallery Image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- =============== Footer Section ============= -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-heading" style="font-size: 1.5rem; border: none;">
+                        Maa <span style="color: var(--accent-gold);">Vaishnavi</span>
+                    </h3>
+                    <p class="mt-4 pe-lg-4">
+                        We provide premium industrial land parcels to corporates for setting up new projects across India. Secure prime land for long-term growth with a name you can trust.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading text-uppercase fs-6">Quick Links</h4>
+                    <ul class="footer-links mt-4">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#real-estate-projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading text-uppercase fs-6">top pages</h4>
+                    <ul class="footer-links mt-4">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy & Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Term & Conditons</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Field Worker</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Real State</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Construction</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading text-uppercase fs-6">Contact Info</h4>
+                    <ul class="footer-links mt-4">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Civil Lines, Prayagraj, UP</a></li>
+                        <li><a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a></li>
+                        <li><a href="mailto:info@sevenbrothers.co.in"><i class="fas fa-envelope"></i> info@sevenbrothers.co.in</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p>&copy; 2026 <strong>Maa Vaishnavi Construction</strong>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p>
+                            <a href="#">Privacy & Policy</a> | 
+                            <a href="#">Term & Conditions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

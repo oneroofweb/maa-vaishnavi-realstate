@@ -556,3 +556,73 @@
         .newsletter-input::placeholder {
             color: #aeb8c2;
         }
+
+        
+/*
+============================================================================ 
+           ABOUT US - PAGE CSS
+============================================================================
+ */
+ /* --- About Section Styles --- */
+.about-content-box {
+  /* Initial visible height (approx 2 paragraphs) */
+  max-height: 220px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  position: relative;
+}
+
+/* Typography for the text content */
+.about-content-text {
+  color: #6c757d; /* Bootstrap text-muted color */
+  line-height: 1.8;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+.about-content-text h5 {
+  color: #333;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.about-content-text ul {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.about-content-text ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Custom red bullet point */
+.about-content-text ul li::before {
+  content: "•";
+  color: #e62e2e;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* The fade effect at the bottom */
+.about-fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
